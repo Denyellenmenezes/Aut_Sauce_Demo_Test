@@ -1,11 +1,11 @@
-name: Cypress Tests
+name: Cypress Tests Electron
 
 on: 
   workflow_dispatch:
     inputs:
       cli:
         description: Run by cypress command line
-        default: yarn cypress run
+        default: yarn cypress run --browser chrome
     
 
 jobs:
