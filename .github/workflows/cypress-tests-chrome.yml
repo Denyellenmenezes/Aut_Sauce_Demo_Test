@@ -1,4 +1,4 @@
-name: Cypress Tests Electron
+name: Cypress Tests Chrome
 
 on: 
   workflow_dispatch:
