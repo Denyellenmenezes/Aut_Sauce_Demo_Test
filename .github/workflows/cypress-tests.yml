@@ -1,0 +1,22 @@
+name: Cypress Tests
+
+on: [push]
+
+jobs:
+  cypress-electron-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4.2.2
+        
+      - name: Enable Corepack and install correct Yarn version
+        run: |
+          corepack enable
+          corepack prepare yarn@4.1.1 --activate
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run E2E tests
+        run: yarn cypress run
+      
