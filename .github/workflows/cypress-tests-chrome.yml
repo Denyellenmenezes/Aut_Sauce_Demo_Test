@@ -1,6 +1,12 @@
-name: Cypress Tests
+name: Cypress Tests Chrome
 
-on: [push]
+on: 
+  workflow_dispatch:
+    inputs:
+      cli:
+        description: Run by cypress command line
+        default: yarn cypress run --browser chrome
+    
 
 jobs:
   cypress-electron-tests:
@@ -18,5 +24,5 @@ jobs:
         run: yarn install
 
       - name: Run E2E tests
-        run: yarn cypress run
+        run: ${{ github.event.input.cli }}
       
