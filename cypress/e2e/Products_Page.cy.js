@@ -1,4 +1,4 @@
-describe('Inventory',()=>{
+describe('Products',()=>{
     beforeEach(() =>{
         cy.visit(Cypress.env('home_url'));
         cy.login(Cypress.env('username_standard'), Cypress.env('password'))
