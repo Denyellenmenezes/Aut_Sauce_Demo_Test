@@ -1,0 +1,62 @@
+name: Cypress Tests Chrome
+
+on: 
+  workflow_dispatch:
+    inputs:
+      cli:
+        description: Run by Cypress command line
+        required: false
+        default: "yarn cypress run --browser chrome"
+
+jobs:
+  cypress-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4.2.2
+        
+      - name: Enable Corepack and install correct Yarn version
+        run: |
+          corepack enable
+          corepack prepare yarn@4.1.1 --activate
+          
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Install Chrome dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libxkbcommon-x11-0 libxcomposite1 libxdamage1 libxrandr2 libgbm1 libasound2
+
+      - name: Run E2E tests
+        run: ${{ github.event.inputs.cli }}
+
+      - name: Save Allure results as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-report
+          path: allure-results
+          retention-days: 7  # Mantém o relatório por 7 dias
+
+  deploy-report:
+    runs-on: ubuntu-latest
+    needs: cypress-tests
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4.2.2
+
+      - name: Download Allure results artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: allure-report
+          path: allure-results
+
+      - name: Generate Allure report
+        run: |
+          npx allure-commandline generate allure-results --clean -o allure-report
+
+      - name: Deploy Allure report to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: allure-report
