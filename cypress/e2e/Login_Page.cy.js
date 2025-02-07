@@ -1,7 +1,7 @@
 describe('login', () => {
 
     beforeEach(() =>{
-        cy.viewport(1920,1080)
+        
         it('Access login page', () => {
             cy.title().should('eq', 'Swag Labs');
         });

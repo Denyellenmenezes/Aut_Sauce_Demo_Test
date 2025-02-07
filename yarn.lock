@@ -48,6 +48,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@shelex/allure-js-commons-browser@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@shelex/allure-js-commons-browser@npm:1.5.0"
+  dependencies:
+    uuid: "npm:9.0.1"
+  checksum: 10c0/d575868184734cca6d6455897927c79e2e4d317ee411d346797ee68918320a726e65b84f53e725398726bb54ffeaa238f6bc615be5c6a2d6582fc210a872fc34
+  languageName: node
+  linkType: hard
+
+"@shelex/cypress-allure-plugin@npm:^2.40.2":
+  version: 2.40.2
+  resolution: "@shelex/cypress-allure-plugin@npm:2.40.2"
+  dependencies:
+    "@shelex/allure-js-commons-browser": "npm:1.5.0"
+    crypto-js: "npm:4.2.0"
+    debug: "npm:4.3.4"
+    object-inspect: "npm:1.13.1"
+    path-browserify: "npm:1.0.1"
+    uuid: "npm:9.0.1"
+  checksum: 10c0/80293720b7883bb9c50d241863cd9e9c43cd0a75730ed89d93669d4c9b852c0faf4111e46c7df782b197d9a7817e0960d499c025d9748f7fdd9534fa7603d0cd
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:*":
   version: 22.13.1
   resolution: "@types/node@npm:22.13.1"
@@ -84,6 +107,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "Teste_Aut_Sauce_Labs@workspace:."
   dependencies:
+    "@shelex/cypress-allure-plugin": "npm:^2.40.2"
     cypress: "npm:^14.0.0"
   languageName: unknown
   linkType: soft
@@ -403,6 +427,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"crypto-js@npm:4.2.0":
+  version: 4.2.0
+  resolution: "crypto-js@npm:4.2.0"
+  checksum: 10c0/8fbdf9d56f47aea0794ab87b0eb9833baf80b01a7c5c1b0edc7faf25f662fb69ab18dc2199e2afcac54670ff0cd9607a9045a3f7a80336cccd18d77a55b9fdf0
+  languageName: node
+  linkType: hard
+
 "cypress@npm:^14.0.0":
   version: 14.0.2
   resolution: "cypress@npm:14.0.2"
@@ -469,6 +500,18 @@ __metadata:
   version: 1.11.13
   resolution: "dayjs@npm:1.11.13"
   checksum: 10c0/a3caf6ac8363c7dade9d1ee797848ddcf25c1ace68d9fe8678ecf8ba0675825430de5d793672ec87b24a69bf04a1544b176547b2539982275d5542a7955f35b7
+  languageName: node
+  linkType: hard
+
+"debug@npm:4.3.4":
+  version: 4.3.4
+  resolution: "debug@npm:4.3.4"
+  dependencies:
+    ms: "npm:2.1.2"
+  peerDependenciesMeta:
+    supports-color:
+      optional: true
+  checksum: 10c0/cedbec45298dd5c501d01b92b119cd3faebe5438c3917ff11ae1bff86a6c722930ac9c8659792824013168ba6db7c4668225d845c633fbdafbbf902a6389f736
   languageName: node
   linkType: hard
 
@@ -1056,6 +1099,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ms@npm:2.1.2":
+  version: 2.1.2
+  resolution: "ms@npm:2.1.2"
+  checksum: 10c0/a437714e2f90dbf881b5191d35a6db792efbca5badf112f87b9e1c712aace4b4b9b742dd6537f3edf90fd6f684de897cec230abde57e87883766712ddda297cc
+  languageName: node
+  linkType: hard
+
 "ms@npm:^2.1.1, ms@npm:^2.1.3":
   version: 2.1.3
   resolution: "ms@npm:2.1.3"
@@ -1069,6 +1119,13 @@ __metadata:
   dependencies:
     path-key: "npm:^3.0.0"
   checksum: 10c0/6f9353a95288f8455cf64cbeb707b28826a7f29690244c1e4bb61ec573256e021b6ad6651b394eb1ccfd00d6ec50147253aba2c5fe58a57ceb111fad62c519ac
+  languageName: node
+  linkType: hard
+
+"object-inspect@npm:1.13.1":
+  version: 1.13.1
+  resolution: "object-inspect@npm:1.13.1"
+  checksum: 10c0/fad603f408e345c82e946abdf4bfd774260a5ed3e5997a0b057c44153ac32c7271ff19e3a5ae39c858da683ba045ccac2f65245c12763ce4e8594f818f4a648d
   languageName: node
   linkType: hard
 
@@ -1110,6 +1167,13 @@ __metadata:
   dependencies:
     aggregate-error: "npm:^3.0.0"
   checksum: 10c0/592c05bd6262c466ce269ff172bb8de7c6975afca9b50c975135b974e9bdaafbfe80e61aaaf5be6d1200ba08b30ead04b88cfa7e25ff1e3b93ab28c9f62a2c75
+  languageName: node
+  linkType: hard
+
+"path-browserify@npm:1.0.1":
+  version: 1.0.1
+  resolution: "path-browserify@npm:1.0.1"
+  checksum: 10c0/8b8c3fd5c66bd340272180590ae4ff139769e9ab79522e2eb82e3d571a89b8117c04147f65ad066dccfb42fcad902e5b7d794b3d35e0fd840491a8ddbedf8c66
   languageName: node
   linkType: hard
 
@@ -1503,6 +1567,15 @@ __metadata:
   version: 4.0.0
   resolution: "untildify@npm:4.0.0"
   checksum: 10c0/d758e624c707d49f76f7511d75d09a8eda7f2020d231ec52b67ff4896bcf7013be3f9522d8375f57e586e9a2e827f5641c7e06ee46ab9c435fc2b2b2e9de517a
+  languageName: node
+  linkType: hard
+
+"uuid@npm:9.0.1":
+  version: 9.0.1
+  resolution: "uuid@npm:9.0.1"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 10c0/1607dd32ac7fc22f2d8f77051e6a64845c9bce5cd3dd8aa0070c074ec73e666a1f63c7b4e0f4bf2bc8b9d59dc85a15e17807446d9d2b17c8485fbc2147b27f9b
   languageName: node
   linkType: hard
 

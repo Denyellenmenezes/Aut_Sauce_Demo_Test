@@ -1,6 +1,5 @@
 describe('Cart Page', ()=>{
     beforeEach(() =>{
-        cy.viewport(1920,1080)
         cy.visit(Cypress.env('home_url'));
         cy.login(Cypress.env('username_standard'), Cypress.env('password'))
         cy.show_logo_inventory()

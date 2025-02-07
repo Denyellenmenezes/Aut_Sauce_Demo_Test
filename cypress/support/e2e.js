@@ -15,6 +15,8 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'  
+require('@shelex/cypress-allure-plugin');
+
 
 beforeEach(() =>{
     cy.visit(Cypress.env('home_url'));
