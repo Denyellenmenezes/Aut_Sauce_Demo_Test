@@ -1,11 +1,11 @@
 describe('Cart Page', ()=>{
     beforeEach(() =>{
+        cy.viewport(1920,1080)
         cy.visit(Cypress.env('home_url'));
         cy.login(Cypress.env('username_standard'), Cypress.env('password'))
         cy.show_logo_inventory()
         cy.get('[data-test="shopping-cart-link"]').click()
         cy.contains('span','Your Cart').should('be.visible')
-
     })
     context('Access Cart Page', ()=>{
         it('Access Cart page',()=>{

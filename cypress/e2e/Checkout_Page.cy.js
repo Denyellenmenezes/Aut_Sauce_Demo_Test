@@ -1,7 +1,9 @@
 //CA01 - US05
 describe('checkout', () =>{
     beforeEach(() =>{
+        cy.viewport(1920,1080)
         cy.Go_to_checkout_Page()
+        
      })
      context('Form Tests', ()=>{
         it('Fill Form', ()=>{

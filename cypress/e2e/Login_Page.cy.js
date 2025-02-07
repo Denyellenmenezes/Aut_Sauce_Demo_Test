@@ -1,7 +1,14 @@
 describe('login', () => {
-    it('Access login page', () => {
-        cy.title().should('eq', 'Swag Labs');
-    });
+
+    beforeEach(() =>{
+        cy.viewport(1920,1080)
+        it('Access login page', () => {
+            cy.title().should('eq', 'Swag Labs');
+        });
+        
+    })
+
+   
 
     context('Success Login', () => {
         
