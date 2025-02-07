@@ -1,4 +1,4 @@
-name: Cypress Tests Chrome
+name: Sauce Demo Test [Oficial]
 
 on: 
   workflow_dispatch:
